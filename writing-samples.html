@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+        <title>Sara Hamill - Instructional Design</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Fredoka&family=Poppins:wght@200;300;400;500;600;700;800&display=swap"
+            rel="stylesheet" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+            integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+            integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous" />
+        <link rel="stylesheet" href="style.css" />
+    </head>
+
+<body>
+    <section class="header" id="header">
+        <div>
+            <a href="#" class="logo">Portfolio</a>
+            <a href="javascript:void(0);" class="icon" id="smallMenu" onclick="myFunction()">
+                <i class="fa fa-bars"></i></a>
+        </div>
+        <div class="toggle">
+            <a href="./index.html">Home</a>
+            <a href="./index.html#about">About</a>
+            <div class="dropdown" id="dropdown">
+                <a href="./index.html#work">Work</a>
+                <div class="dropdown-content">
+                    <a href="./design.html">Design</a>
+                    <a href="./professional.html">Professional Projects</a>
+                    <a href="./training.html">Training</a>
+                    <a href="./writing-samples.html">Writing Samples</a>
+                </div>
+            </div>
+            <a href="./contact.html">Contact</a>
+        </div>
+    </section>
+    <div class="el-title" id="el-title">
+        <h2>Sara Hamill</h2>
+    </div>
+      <section class="element" id="about">
+        <div class="about">
+            <h2>Writing Samples</h2>
+            <img src="./images/instructional.jpg" />
+        </div>
+        <div class="bio">
+            <p>Writing has been an essential part of my life overall. I have always been writing, whether as a child, creating short stories, or as a college student getting my degree in English Literature. Though I have written in many capacities: curricula, research papers, literary analysis, strategic analysis, I really enjoy creating shorter content pieces like blog posts or social media posts that can deliver an impactful message to the reader. These projects reflect the range of writing projects that I have undertaken.</p>
+        </div>
+    </section>
+    <section class="dWork" id="work">
+        <div class="write-work">
+            <div class="write-image">
+                <a href="./files/Fear Can Be a Good Thing Oct. 2012.pdf" target="_blank"><img src="./images/deskWriting.jpg" alt=""></a>
+            </div>
+            <div class="write-text"><a href="./files/Fear Can Be a Good Thing Oct. 2012.pdf" target="_blank">
+                This is an article for a local magazine addressing the topic of fear and anxiety, how to recognize them and healthy ways to address them as part of overall well-being.</a><br /><em>(click on image)</em>
+            </div>
+            <div class="write-image">
+                <a href="./files/Chapter Five_SaraHamill_ThesisDec2015.pdf" target="_blank"><img src="./images/coffeeWriting.jpg" alt=""></a>
+            </div>
+            <div class="write-text"><a href="./files/Chapter Five_SaraHamill_ThesisDec2015.pdf" target="_blank">
+                This is an excerpt from my Master’s degree capstone project and thesis, providing analysis of the final outcomes.</a><br /><em>(click on image)</em>
+            </div>
+            <div class="write-image">
+                <a href="./files/JTW Excerpt.pdf" target="_blank"><img src="./images/typewriter.jpg" alt=""></a>
+            </div>
+            <div class="write-text"><a href="./files/JTW Excerpt.pdf" target="_blank">
+                This is an excerpt from a recently developed curriculum to help women recovering from breast cancer to process their losses and find new hope, vision and meaning for their lives.</a><br /><em>(click on image)</em>
+            </div>
+            <div class="write-image">
+                <a href="./files/Research analysis.pdf" target="_blank"><img src="./images/inkPen.jpg" alt=""></a>
+            </div>
+            <div class="write-text"><a href="./files/Research analysis.pdf" target="_blank">
+                This is the introductory analysis for the clinical trial protocol developed in partnership with Saint Thomas Health/Ascension Health in Nashville, Tennessee.</a><br /><em>(click on image)</em>
+            </div>
+            <div class="write-image">
+                <a href="./files/ThankYouDisillusionment_BlogEntry2_Sara.pdf" target="_blank"><img src="./images/writing1.jpg" alt=""></a>
+            </div>
+            <div class="write-text"><a href="./files/ThankYouDisillusionment_BlogEntry2_Sara.pdf" target="_blank">
+                This is a blog post written about addressing the tendency for perfectionism in our lives.</a><br /><em>(click on image)</em>
+            </div>
+        </div>
+    </section>
+    <section class="footer">
+        <div class="designs">
+            <p>&copy; Hamill Designs &nbsp;
+            <p id="yearDisplay"></p>
+            </p>
+        </div>
+    </section>
+    <script src="./node_modules/lightbox2/dist/js/lightbox.js"></script>
+</body>
+</html>
+<script>
+    var currentTime = new Date();
+    var year = currentTime.getFullYear();
+    document.getElementById('yearDisplay').innerHTML = year;
+
+    var w = window.innerWidth;
+
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > 10) {
+            $('#header').addClass('sticky')
+            $('.header a.icon').style.color = "#fff";
+            $('#dropdown').removeClass('dropdown');
+        } else {
+            $('#header').removeClass('sticky')
+        }
+    });
+
+    if(w <= 860){
+        $('#dropdown').removeClass('dropdown');
+    }
+
+    function myFunction() {
+        var x = document.getElementById("header");
+        if (x.className === "header") {
+            x.className += " responsive";
+        } else if (x.className === "header sticky") {
+            x.className += " responsive";
+        } else if ($(this).scrollTop() > 10) {
+            x.className = "header sticky";
+        } else {
+            x.className = "header";
+        }
+    }
+
+    $('#smallMenu').click(function () {
+        $('#el-title').toggleClass('el-title-space');
+    })
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+</script>

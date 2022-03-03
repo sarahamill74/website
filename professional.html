@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+        <title>Sara Hamill - Instructional Design</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Fredoka&family=Poppins:wght@200;300;400;500;600;700;800&display=swap"
+            rel="stylesheet" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+            integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+            integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous" />
+        <link rel="stylesheet" href="./node_modules/lightbox2/dist/css/lightbox.min.css">   
+        <link rel="stylesheet" href="style.css" />
+    </head>
+
+<body>
+    <section class="header" id="header">
+        <div>
+            <a href="#" class="logo">Portfolio</a>
+            <a href="javascript:void(0);" class="icon" id="smallMenu" onclick="myFunction()">
+                <i class="fa fa-bars"></i></a>
+        </div>
+        <div class="toggle">
+            <a href="./index.html">Home</a>
+            <a href="./index.html#about">About</a>
+            <div class="dropdown" id="dropdown">
+                <a href="./index.html#work">Work</a>
+                <div class="dropdown-content">
+                    <a href="./design.html">Design</a>
+                    <a href="./professional.html">Professional Projects</a>
+                    <a href="./training.html">Training</a>
+                    <a href="./writing-samples.html">Writing Samples</a>
+                </div>
+            </div>
+            <a href="./contact.html">Contact</a>
+        </div>
+    </section>
+    <div class="el-title" id="el-title">
+        <h2>Sara Hamill</h2>
+    </div>
+    <section class="element" id="about">
+        <div class="about">
+            <h2>Professional Projects</h2>
+            <img src="./images/projects2.jpg" />
+        </div>
+        <div class="bio">
+            <p>These projects reflect the heart of my professional expertise and work. While it is my nature to think in strategic terms when approaching a challenge or building a program or organization, my greatest strength is being able to do the research, information synthesis and communication needed to create clarity and vision. These projects also reflect my extensive experience in writing, curricula and training development. They are also a reflection of my years helping others effectively move toward well-being while also teaching others group facilitation skills. </p>
+        </div>
+    </section>
+    <section class="dWork" id="work">
+        <div class="pro-work">
+            <div class="pro-image">
+                <a href="./files/Strategy Report.pdf" target="_blank"><img src="./images/strategic_plan.png" alt=""></a>
+            </div>
+            <div class="pro-text">
+                I created this 3-year strategic plan for my last organization. I managed the five-month project, conducting all of the community needs research, synthesizing the information, leading committee discussions, and writing and designing the final product. Though not posted here, I also created a detailed breakdown of each strategic goal into actionable steps with a timeline to track progress.
+            </div>
+            <div class="pro-image">
+                <a href="./files/Restore-collective-mom-covers-final.pdf" target="_blank"><img src="./images/participant_guide.png" alt=""></a>
+            </div>
+            <div class="pro-text">
+                This is a collaborative curriculum project with the national organization, Mothers of Preschoolers (MOPS). I managed the project scope and timeline, wrote the curriculum, created training resource videos, and helped design the final product.
+            </div>
+            <div class="pro-image">
+                <a href="./files/Draw Like No One is Watching.pptx" target="_blank"><img src="./images/draw_like.png" alt=""></a>
+            </div>
+            <div class="pro-text">
+                This is a presentation on the power of creativity that I created and led for the “Self-Care Summit” hosted by Day 7 in Nashville, Tennessee.
+            </div>
+            <div class="pro-image">
+                <a href="./files/Healthyrelationships.pptx" target="_blank"><img src="./images/relationships.png" alt=""></a>
+            </div>
+            <div class="pro-text">
+                This is a presentation on healthy relationships that I created and led for a non-profit in Nashville, Tennessee.
+            </div>
+            <div class="pro-image-guide">
+                <a href="./files/JTFGuide 2ndEdition.pdf" target="_blank"><img src="./images/facilitator_guide.png" alt=""></a>
+            </div>
+            <div class="pro-text">
+                This is a facilitator guide written to accompany a support group curriculum. I wrote and designed the guide.
+            </div>
+        </div>
+    </section>
+    <section class="footer">
+        <div class="designs">
+            <p>&copy; Hamill Designs &nbsp;
+            <p id="yearDisplay"></p>
+            </p>
+        </div>
+    </section>
+    <script src="./node_modules/lightbox2/dist/js/lightbox.js"></script>
+</body>
+</html>
+<script>
+    var currentTime = new Date();
+    var year = currentTime.getFullYear();
+    document.getElementById('yearDisplay').innerHTML = year;
+
+    var w = window.innerWidth;
+
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > 10) {
+            $('#header').addClass('sticky')
+            $('.header a.icon').style.color = "#fff";
+            $('#dropdown').removeClass('dropdown');
+        } else {
+            $('#header').removeClass('sticky')
+        }
+    });
+
+    if(w <= 860){
+        $('#dropdown').removeClass('dropdown');
+    }
+
+    function myFunction() {
+        var x = document.getElementById("header");
+        if (x.className === "header") {
+            x.className += " responsive";
+        } else if (x.className === "header sticky") {
+            x.className += " responsive";
+        } else if ($(this).scrollTop() > 10) {
+            x.className = "header sticky";
+        } else {
+            x.className = "header";
+        }
+    }
+
+    $('#smallMenu').click(function () {
+        $('#el-title').toggleClass('el-title-space');
+    })
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+</script>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+        <title>Sara Hamill - Instructional Design</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Fredoka&family=Poppins:wght@200;300;400;500;600;700;800&display=swap"
+            rel="stylesheet" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+            integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+            integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous" />
+        <link rel="stylesheet" href="style.css" />
+    </head>
+
+<body>
+    <section class="header" id="header">
+        <div>
+            <a href="#" class="logo">Portfolio</a>
+            <a href="javascript:void(0);" class="icon" id="smallMenu" onclick="myFunction()">
+                <i class="fa fa-bars"></i></a>
+        </div>
+        <div class="toggle">
+            <a href="./index.html">Home</a>
+            <a href="./index.html#about">About</a>
+            <div class="dropdown" id="dropdown">
+                <a href="./index.html#work">Work</a>
+                <div class="dropdown-content">
+                    <a href="./design.html">Design</a>
+                    <a href="./professional.html">Professional Projects</a>
+                    <a href="./training.html">Training</a>
+                    <a href="./writing-samples.html">Writing Samples</a>
+                </div>
+            </div>
+            <a href="./contact.html">Contact</a>
+        </div>
+    </section>
+    <div class="el-title" id="el-title">
+        <h2>Sara Hamill</h2>
+    </div>
+      <section class="element" id="about">
+        <div class="about">
+            <h2>Training Samples</h2>
+            <img src="./images/instructional.jpg" />
+        </div>
+        <div class="bio">
+            <p>Over my years of professional, educational, and community work, I have had the opportunity to create and lead many trainings. These projects reflect both my expertise in conflict management within the organizational and community contexts and my efforts to increase education around mental and emotional well-being. </p>
+        </div>
+    </section>
+    <section class="dWork" id="work">
+        <div class="train-work">
+            <div class="train-image">
+                <a href="./files/PowerPoint Conflict Management 101.2015.pptx" target="_blank"><img src="./images/SecondHarvest.png" alt=""></a>
+            </div>
+            <div class="train-text">
+                I created this training while working for Second Harvest Food Bank of Middle Tennessee. It is a training meant to help food distribution volunteers deal with the conflict that often arises at their agencies among clients.
+            </div>
+            <div class="train-image">
+                <a href="./files/New IMF No Trainers.pptx" target="_blank"><img src="./images/RestoreFacilitation.png" alt=""></a>
+            </div>
+            <div class="train-text">
+                I helped to create and design this facilitator training for my last organization. In this version, I narrate the training, not scripted, but as I would lead it if it were synchronous learning. This training is primarily done in an online environment.
+            </div>
+            <div class="train-image">
+                <a href="./files/Keeping your sanity in the insanity.TCW2016.pptx" target="_blank"><img src="./images/Sanity.png" alt=""></a>
+            </div>
+            <div class="train-text">I created this presentation on mental health resources for the annual “Touring Career Workshop” that takes place in Nashville, Tennessee to support employees of the music and touring industry.
+            </div>
+            <div class="train-image">
+                <a href="./files/Y PowerPoint.Dealing With Challenging Members and Scenarios.2015.pptx" target="_blank"><img src="./images/YMCA.png" alt=""></a>
+            </div>
+            <div class="train-text">
+                I created this training for the YMCA of Middle Tennessee. It is meant to help membership staff deal productively with conflict that might happen with members. It was designed for a classroom, synchronous learning environment and also has job aids.  
+            </div>
+        </div>
+    </section>
+    <section class="footer">
+        <div class="designs">
+            <p>&copy; Hamill Designs &nbsp;
+            <p id="yearDisplay"></p>
+            </p>
+        </div>
+    </section>
+</body>
+</html>
+<script>
+    var currentTime = new Date();
+    var year = currentTime.getFullYear();
+    document.getElementById('yearDisplay').innerHTML = year;
+
+    var w = window.innerWidth;
+
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > 10) {
+            $('#header').addClass('sticky')
+            $('.header a.icon').style.color = "#fff";
+            $('#dropdown').removeClass('dropdown');
+        } else {
+            $('#header').removeClass('sticky')
+        }
+    });
+
+    if(w <= 860){
+        $('#dropdown').removeClass('dropdown');
+    }
+
+    function myFunction() {
+        var x = document.getElementById("header");
+        if (x.className === "header") {
+            x.className += " responsive";
+        } else if (x.className === "header sticky") {
+            x.className += " responsive";
+        } else if ($(this).scrollTop() > 10) {
+            x.className = "header sticky";
+        } else {
+            x.className = "header";
+        }
+    }
+
+    $('#smallMenu').click(function () {
+        $('#el-title').toggleClass('el-title-space');
+    })
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+</script>
